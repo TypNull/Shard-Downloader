@@ -1,6 +1,5 @@
 ﻿using Shard_Downloader.MVVM.ViewModel;
 using System;
-using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
 
@@ -11,16 +10,16 @@ namespace Shard_Downloader.MVVM.View
     /// </summary>
     public partial class MainWindow : Window
     {
-        [DllImport("DwmApi")] //System.Runtime.InteropServices
-        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
         public MainWindow()
         {
             InitializeComponent();
 
             IntPtr hWnd = new WindowInteropHelper(GetWindow(this)).EnsureHandle();
-            _ = DwmSetWindowAttribute(hWnd, 20, new[] { 1 }, 4);
+
+            ((MainViewModel)DataContext).SetHandler(hWnd);
+
             ((MainViewModel)DataContext).OpenAddWindowEvent += OpenAddWindow;
-            ((MainViewModel)DataContext).OpenSettingsWindowEvent += OpenSettingsWindow; ;
+            ((MainViewModel)DataContext).OpenSettingsWindowEvent += OpenSettingsWindow;
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
 

@@ -8,10 +8,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/LightTheme.xaml" />
                 <ResourceDictionary Source="/Themes/ModernButton.xaml" />
                 <ResourceDictionary Source="/Themes/ModernTextBox.xaml" />
                 <ResourceDictionary Source="/Themes/ModernCheckbox.xaml" />
-                <ResourceDictionary Source="/Themes/DarkTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type  vm:MainViewModel}">
                 <view:MainWindow/>

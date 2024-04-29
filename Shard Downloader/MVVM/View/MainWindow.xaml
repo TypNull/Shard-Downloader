@@ -21,7 +21,22 @@
                 <RowDefinition MinHeight="170" MaxHeight="300" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Image MaxHeight="300"  Margin="20,0,20,0" Source="\Assets\Images\man-green.png" RenderOptions.BitmapScalingMode="Fant"/>
+            <Image MaxHeight="300"
+                   Margin="20,0,20,0"
+                   RenderOptions.BitmapScalingMode="Fant">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Source"
+                                Value="\Assets\Images\man.png" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding LightTheme,Mode=OneWay}" Value="False">
+                                <Setter Property="Source"
+                                        Value="\Assets\Images\man-green.png" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
 
             <TextBlock Grid.Row="1" Margin="0,0,0,10" VerticalAlignment="Top"  HorizontalAlignment="Center" FontSize="20" FontFamily="Typo Round Demo" Foreground="{DynamicResource MainText}" FontWeight="Bold" >There's nothing here yet</TextBlock>
 
@@ -231,8 +246,16 @@
                         Tag="{DynamicResource ClearBP}" Style="{StaticResource ModernButtonStyle}">
                     Clear
                 </Button>
-                <Button Command="{Binding SettingsCommand}" Margin="0,5,0,5" Width="22" BorderBrush="Transparent"  Background="{DynamicResource SettingsB}" Tag="{DynamicResource SettingsBP}" Style="{StaticResource ModernButtonStyle}">
-                    <Image Margin="3" Source="\Assets\Images\settings.png"  RenderOptions.BitmapScalingMode="Fant"/>
+                <Button Command="{Binding SettingsCommand}"
+                        Margin="0,5,0,5"
+                        Width="22"
+                        BorderBrush="Transparent"
+                        Background="{DynamicResource SettingsB}"
+                        Tag="{DynamicResource SettingsBP}"
+                        Style="{StaticResource ModernButtonStyle}">
+                    <Image Margin="3"
+                           Source="\Assets\Images\settings.png"
+                           RenderOptions.BitmapScalingMode="Fant" />
                 </Button>
             </StackPanel>
 
