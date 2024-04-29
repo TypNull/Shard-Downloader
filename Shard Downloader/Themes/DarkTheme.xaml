@@ -24,9 +24,9 @@
                      x:Key="SettingsB" />
     <SolidColorBrush Color="Gray"
                      x:Key="SettingsBP" />
-    <SolidColorBrush Color="#FF4FBBE8"
-                     x:Key="DownloadB" />
     <SolidColorBrush Color="#FF3D94B9"
+                     x:Key="DownloadB" />
+    <SolidColorBrush Color="#FF44849F"
                      x:Key="DownloadBP" />
     <SolidColorBrush Color="#FF444444"
                      x:Key="InputFieldBackground" />
