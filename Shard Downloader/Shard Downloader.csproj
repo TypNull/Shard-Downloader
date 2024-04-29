@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Shard_Downloader</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\Images\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Images\folder.png" />
+    <None Remove="Assets\Images\logo.ico" />
+    <None Remove="Assets\Images\logo.png" />
+    <None Remove="Assets\Images\man.png" />
+    <None Remove="Assets\Images\pause.png" />
+    <None Remove="Assets\Images\play.png" />
+    <None Remove="Assets\Images\settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Images\logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Shard.DownloadAssistant" Version="0.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DownloadAssistant">
+      <HintPath>..\..\Librarys\DownloadAssistant\DownloadAssistant\bin\Debug\net6.0\DownloadAssistant.dll</HintPath>
+    </Reference>
+    <Reference Include="Requests">
+      <HintPath>..\..\Librarys\Requests\Requests\bin\Debug\net6.0\Requests.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\folder.png" />
+    <Resource Include="Assets\Images\logo.ico" />
+    <Resource Include="Assets\Images\logo.png" />
+    <Resource Include="Assets\Images\man.png" />
+    <Resource Include="Assets\Images\pause.png" />
+    <Resource Include="Assets\Images\play.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\settings.png">
+      <Generator></Generator>
+    </Resource>
+  </ItemGroup>
+
+</Project>

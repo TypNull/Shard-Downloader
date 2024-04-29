@@ -1,0 +1,26 @@
+﻿<Application x:Class="Shard_Downloader.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Shard_Downloader"
+             xmlns:vm="clr-namespace:Shard_Downloader.MVVM.ViewModel"
+             xmlns:view="clr-namespace:Shard_Downloader.MVVM.View"
+             StartupUri="MVVM/View/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/ModernButton.xaml" />
+                <ResourceDictionary Source="/Themes/ModernTextBox.xaml" />
+                <ResourceDictionary Source="/Themes/ModernCheckbox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type  vm:MainViewModel}">
+                <view:MainWindow/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type  vm:AddViewModel}">
+                <view:AddWindow/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type  vm:SettingsViewModel}">
+                <view:SettingsWindow/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
