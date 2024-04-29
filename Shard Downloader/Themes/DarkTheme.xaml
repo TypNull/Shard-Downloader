@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush Color="#1e1e1e"
+                     x:Key="Background" />
+
+    <SolidColorBrush Color="PaleVioletRed"
+                     x:Key="CancelB" />
+    <SolidColorBrush Color="IndianRed"
+                     x:Key="CancelBP" />
+    <SolidColorBrush Color="#FFFF8282"
+                     x:Key="CancelAllB" />
+    <SolidColorBrush Color="#FFFF5C5C"
+                     x:Key="CancelAllBP" />
+    <SolidColorBrush Color="#FF4C9F4C"
+                     x:Key="AddB" />
+    <SolidColorBrush Color="#FF458E45"
+                     x:Key="AddBP" />
+    <SolidColorBrush Color="#FFDA9853"
+                     x:Key="ClearB" />
+    <SolidColorBrush Color="#FFB78045"
+                     x:Key="ClearBP" />
+    <SolidColorBrush Color="DarkGray"
+                     x:Key="SettingsB" />
+    <SolidColorBrush Color="Gray"
+                     x:Key="SettingsBP" />
+    <SolidColorBrush Color="#FF4FBBE8"
+                     x:Key="DownloadB" />
+    <SolidColorBrush Color="#FF3D94B9"
+                     x:Key="DownloadBP" />
+    <SolidColorBrush Color="#FF444444"
+                     x:Key="InputFieldBackground" />
+    <SolidColorBrush Color="#FFBFBFBF"
+                     x:Key="InputFieldBorder" />
+    <SolidColorBrush Color="#dfe6e9"
+                     x:Key="Text" />
+    <SolidColorBrush Color="#69bc91"
+                     x:Key="MainText" />
+    <SolidColorBrush Color="#FFDADA00"
+                     x:Key="PauseB" />
+    <SolidColorBrush Color="#FFCACA00"
+                     x:Key="PauseBP" />
+
+    <SolidColorBrush Color="#FF82C7DF"
+                     x:Key="Running" />
+    <SolidColorBrush Color="#FFDBB369"
+                     x:Key="Cancelled" />
+    <SolidColorBrush Color="#FF64BF64"
+                     x:Key="Compleated" />
+    <SolidColorBrush Color="#FFC54949"
+                     x:Key="Failed" />
+    <SolidColorBrush Color="#FFCAD36B"
+                     x:Key="Onhold" />
+
+</ResourceDictionary>

@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush Color="White"  x:Key="Background" />
+    
+    <SolidColorBrush Color="PaleVioletRed"  x:Key="CancelB" />
+    <SolidColorBrush Color="IndianRed"  x:Key="CancelBP" />
+    <SolidColorBrush Color="#FFFF8282"  x:Key="CancelAllB" />
+    <SolidColorBrush Color="#FFFF5C5C"  x:Key="CancelAllBP" />
+    <SolidColorBrush Color="LightGreen"  x:Key="AddB" />
+    <SolidColorBrush Color="#FF75D975"  x:Key="AddBP" />
+    <SolidColorBrush Color="#FFFFC487"  x:Key="ClearB" />
+    <SolidColorBrush Color="#FFFFB05E"  x:Key="ClearBP" />
+    <SolidColorBrush Color="LightGray"  x:Key="SettingsB" />
+    <SolidColorBrush Color="DarkGray"  x:Key="SettingsBP" />
+    <SolidColorBrush Color="LightBlue"  x:Key="DownloadB" />
+    <SolidColorBrush Color="SkyBlue"  x:Key="DownloadBP" />
+    <SolidColorBrush Color="#7F97FF00"
+                     x:Key="InputFieldBackground" />
+
+    <SolidColorBrush Color="#FF5E5D5D"
+                     x:Key="InputFieldBorder" />
+    <SolidColorBrush Color="Black"
+                     x:Key="Text" />
+    <SolidColorBrush Color="#FF414141"
+                     x:Key="MainText" />
+    <SolidColorBrush Color="Yellow"
+                     x:Key="PauseB" />
+    <SolidColorBrush Color="Yellow"
+                     x:Key="PauseBP" />
+
+    <SolidColorBrush Color="#FF89E1FF"
+                     x:Key="Running" />
+    <SolidColorBrush Color="#FFFFC75F"
+                     x:Key="Cancelled" />
+    <SolidColorBrush Color="#FF5CFF5C"
+                     x:Key="Compleated" />
+    <SolidColorBrush Color="#FFF33636"
+                     x:Key="Failed" />
+    <SolidColorBrush Color="#FFF2FF68"
+                     x:Key="Onhold" />
+
+    
+</ResourceDictionary>

@@ -7,7 +7,7 @@
         xmlns:viewmodel="clr-namespace:Shard_Downloader.MVVM.ViewModel" 
         Icon="\Assets\Images\logo.png"
         mc:Ignorable="d"
-        Title="Shard Downloader" MinHeight="300" Height="450" Width="800" MinWidth="300" MaxWidth="800">
+        Title="Shard Downloader" Background="{DynamicResource Background}" MinHeight="300" Height="450" Width="800" MinWidth="300" MaxWidth="800">
     <Window.DataContext>
         <viewmodel:MainViewModel/>
     </Window.DataContext>
@@ -21,10 +21,10 @@
                 <RowDefinition MinHeight="170" MaxHeight="300" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Image MaxHeight="300"  Margin="20,0,20,0" Source="\Assets\Images\man.png" RenderOptions.BitmapScalingMode="Fant"/>
+            <Image MaxHeight="300"  Margin="20,0,20,0" Source="\Assets\Images\man-green.png" RenderOptions.BitmapScalingMode="Fant"/>
 
-            <TextBlock Grid.Row="1" Margin="0,0,0,10" VerticalAlignment="Top"  HorizontalAlignment="Center" FontSize="20" FontFamily="Typo Round Demo" Foreground="#FF414141" FontWeight="Bold" >There's nothing here yet</TextBlock>
-            
+            <TextBlock Grid.Row="1" Margin="0,0,0,10" VerticalAlignment="Top"  HorizontalAlignment="Center" FontSize="20" FontFamily="Typo Round Demo" Foreground="{DynamicResource MainText}" FontWeight="Bold" >There's nothing here yet</TextBlock>
+
             <Grid.Style>
                 <Style TargetType="{x:Type Grid}">
                     <Setter Property="Visibility"
@@ -38,7 +38,6 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
-
         </Grid>
       
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
@@ -62,25 +61,25 @@
                                             <Setter Value="#FFBABABA" Property="Fill"/>
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding State}" Value="Running">
-                                                    <Setter Property="Fill"  Value="#FF89E1FF"  />
+                                                    <Setter Property="Fill"  Value="{DynamicResource Running}"  />
                                                 </DataTrigger>
                                                 <DataTrigger Binding="{Binding State}" Value="Cancelled">
-                                                    <Setter Property="Fill"  Value="#FFFFC75F"  />
+                                                    <Setter Property="Fill"  Value="{DynamicResource Cancelled}"  />
                                                 </DataTrigger>
                                                 <DataTrigger Binding="{Binding State}" Value="Compleated">
-                                                    <Setter Property="Fill"  Value="#FF5CFF5C"  />
+                                                    <Setter Property="Fill"  Value="{DynamicResource Compleated}"  />
                                                 </DataTrigger>
                                                 <DataTrigger Binding="{Binding State}" Value="Failed">
-                                                    <Setter Property="Fill"  Value="#FFF33636"  />
+                                                    <Setter Property="Fill"  Value="{DynamicResource Failed}"  />
                                                 </DataTrigger>
-                                                <DataTrigger Binding="{Binding State}" Value="Onhold">
-                                                    <Setter Property="Fill"  Value="#FFF2FF68"  />
+                                                <DataTrigger Binding="{Binding State}" Value="Paused">
+                                                    <Setter Property="Fill"  Value="{DynamicResource Onhold}"  />
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Margin="5,2,5,0" TextTrimming="CharacterEllipsis"  Grid.Column="1" Text="{Binding InfoField,Mode=OneWay}"/>
+                                <TextBlock Margin="5,2,5,0" TextTrimming="CharacterEllipsis"  Grid.Column="1" Foreground="{DynamicResource Text}" Text="{Binding InfoField,Mode=OneWay}"/>
                                 
                                 <ProgressBar Grid.Column="2"
                          Minimum="0" Maximum="1" Value="{Binding Progress,Delay=1000,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" 
@@ -107,12 +106,13 @@
                                 </ProgressBar>
                                 <TextBlock Grid.Column="2" VerticalAlignment="Center"
                            HorizontalAlignment="Center"
-                Foreground="Black" 
+                Foreground="{DynamicResource Text}" 
                            FontSize="10"
                 FontWeight="Medium" >
                                     <TextBlock.Style>
                                         <Style  TargetType="TextBlock" >
                                             <Setter Property="Text" Value="{Binding State}" />
+                                            <Setter Property="Foreground" Value="{DynamicResource Text}" />
                                             <Style.Triggers>
 
                                                 <DataTrigger Binding="{Binding State}"
@@ -135,7 +135,7 @@
                                     </TextBlock.Style>
                                 </TextBlock>
 
-                                <Button Grid.Column="3" HorizontalAlignment="Right" Width="20" Height="20" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="Yellow" Command="{Binding PauseCommand}" Tag="Yellow"
+                                <Button Grid.Column="3" HorizontalAlignment="Right" Width="20" Height="20" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="{DynamicResource PauseB}" Command="{Binding PauseCommand}" Tag="{DynamicResource PauseBP}"
                                     >
                                     <Image Margin="3" RenderOptions.BitmapScalingMode="Fant">
                                         <Image.Style>
@@ -175,8 +175,8 @@
                                         </Style>
                                     </Button.Style>
                                 </Button>
-                                <Button Grid.Column="4" HorizontalAlignment="Right" Width="20" Height="20" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Command="{Binding CancelCommand}" Background="PaleVioletRed" Tag="IndianRed" >
-                                    <TextBlock Margin="0,0,1,1">🗙</TextBlock>
+                                <Button Grid.Column="4" HorizontalAlignment="Right" Width="20" Height="20" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Command="{Binding CancelCommand}" Background="{DynamicResource CancelB}" Tag="{DynamicResource CancelBP}" >
+                                    <TextBlock Margin="0,0,1,1" Foreground="{DynamicResource Text}" >🗙</TextBlock>
                                     <Button.Style>
                                         <Style  TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}">
                                             <Style.Triggers>
@@ -213,18 +213,37 @@
         </ScrollViewer>
         <Grid Grid.Row="1" >
             <StackPanel  HorizontalAlignment="Left" Orientation="Horizontal" Margin="10,0,10,0">
-                <Button Command="{Binding AddCommand}"  Margin="0,5,0,5" Width="70" BorderBrush="Transparent" Background="LightGreen" Tag="#FF75D975" Style="{StaticResource ModernButtonStyle}">
+                <Button Command="{Binding AddCommand}"
+                        Margin="0,5,0,5"
+                        Width="70"
+                        Foreground="{DynamicResource Text}"
+                        BorderBrush="Transparent"
+                        Background="{DynamicResource AddB}"
+                        Tag="{DynamicResource AddBP}" Style="{StaticResource ModernButtonStyle}">
                     Add+
                 </Button>
-                <Button Command="{Binding ClearCommand}" Margin="0,5,0,5" Width="70" BorderBrush="Transparent"  Background="#FFFFC487" Tag="#FFFFB05E" Style="{StaticResource ModernButtonStyle}">
+                <Button Command="{Binding ClearCommand}"
+                        Margin="0,5,0,5"
+                        Width="70"
+                        Foreground="{DynamicResource Text}"
+                        BorderBrush="Transparent"
+                        Background="{DynamicResource ClearB}"
+                        Tag="{DynamicResource ClearBP}" Style="{StaticResource ModernButtonStyle}">
                     Clear
                 </Button>
-                <Button Command="{Binding SettingsCommand}" Margin="0,5,0,5" Width="22" BorderBrush="Transparent"  Background="LightGray" Tag="DarkGray" Style="{StaticResource ModernButtonStyle}">
+                <Button Command="{Binding SettingsCommand}" Margin="0,5,0,5" Width="22" BorderBrush="Transparent"  Background="{DynamicResource SettingsB}" Tag="{DynamicResource SettingsBP}" Style="{StaticResource ModernButtonStyle}">
                     <Image Margin="3" Source="\Assets\Images\settings.png"  RenderOptions.BitmapScalingMode="Fant"/>
                 </Button>
             </StackPanel>
 
-            <Button  Command="{Binding CancelCommand}" HorizontalAlignment="Right" Margin="10,5,10,5" Width="80" BorderBrush="Transparent"  Background="#FFFF8282" Tag="#FFFF5C5C" Style="{StaticResource ModernButtonStyle}">
+            <Button  Command="{Binding CancelCommand}"
+                     HorizontalAlignment="Right"
+                     Margin="10,5,10,5"
+                     Width="80"
+                     Foreground="{DynamicResource Text}"
+                     BorderBrush="Transparent"
+                     Background="{DynamicResource CancelAllB}"
+                     Tag="{DynamicResource CancelAllBP}" Style="{StaticResource ModernButtonStyle}">
                 Cancel all
             </Button>
         </Grid>

@@ -10,7 +10,9 @@
        Icon="\Assets\Images\logo.png"
         ShowInTaskbar="false"
         ResizeMode="NoResize"
-        Title="Add Url" Height="45" Width="330">
+        Title="Add Url"
+        Height="45"
+        Width="330">
     <Window.DataContext>
         <viewmodel:SettingsViewModel/>
     </Window.DataContext>
@@ -30,7 +32,7 @@
             </Setter>
         </Style>
     </Window.Style>
-    <Border Background="White" BorderBrush="Gray" BorderThickness="1" CornerRadius="10,10,5,5">
+    <Border Background="{DynamicResource Background}" BorderBrush="Gray" BorderThickness="1" CornerRadius="10,10,5,5">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="10"/>
@@ -41,13 +43,15 @@
             <StackPanel Margin="5" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Grid.ColumnSpan="2">
                 <TextBox PreviewTextInput="NumberValidationTextBox" Style="{StaticResource AutomaticTextBox}" Text="{Binding Value}" MaxLength="2" Tag="The max degree of parallelism: " Width="250" x:Name="textBox" />
             </StackPanel>
-            <Button Grid.Row="1" WindowChrome.IsHitTestVisibleInChrome="true" Command="{Binding CloseCommand}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5" Width="20" Height="20" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Background="PaleVioletRed" Tag="IndianRed" Style="{StaticResource ModernButtonStyle}" >
-                <TextBlock Margin="0,0,1,1">🗙</TextBlock>
+            <Button Grid.Row="1" WindowChrome.IsHitTestVisibleInChrome="true" Command="{Binding CloseCommand}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5" Width="20" Height="20" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Background="{DynamicResource CancelB}" Tag="{DynamicResource CancelBP}" Style="{StaticResource ModernButtonStyle}" >
+                <TextBlock Margin="0,0,1,1"
+                           Foreground="{DynamicResource Text}">🗙</TextBlock>
                 
             </Button>
 
-            <Button Grid.Row="1" WindowChrome.IsHitTestVisibleInChrome="true" Command="{Binding SaveCommand}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5" Width="20" Height="20" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Background="LightGreen" Tag="#FF71BD71"  Style="{StaticResource ModernButtonStyle}" >
-                <TextBlock Margin="0,0,1,1">✓</TextBlock>
+            <Button Grid.Row="1" WindowChrome.IsHitTestVisibleInChrome="true" Command="{Binding SaveCommand}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5" Width="20" Height="20" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Background="{DynamicResource AddB}" Tag="{DynamicResource AddBP}"  Style="{StaticResource ModernButtonStyle}" >
+                <TextBlock Margin="0,0,1,1"
+                           Foreground="{DynamicResource Text}">✓</TextBlock>
 
             </Button>
         </Grid>

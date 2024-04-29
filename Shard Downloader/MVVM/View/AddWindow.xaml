@@ -29,7 +29,7 @@
             </Setter>
         </Style>
     </Window.Style>
-    <Border Background="White" BorderBrush="Gray" BorderThickness="1" CornerRadius="20">
+    <Border Background="{DynamicResource Background}" BorderBrush="Gray" BorderThickness="1" CornerRadius="20">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="10"/>
@@ -51,40 +51,56 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
-                    <TextBox Style="{StaticResource AutomaticTextBox}" Text="{Binding Name}" Tag="Filename: " MaxWidth="400"  />
+                    <TextBox Foreground="{DynamicResource Text}" Style="{StaticResource AutomaticTextBox}" Text="{Binding Name}" Tag="Filename: " MaxWidth="400"  />
                 </StackPanel>
                 <StackPanel Margin="0,5,5,0" Grid.Row="1" Orientation="Horizontal">
                     <CheckBox Margin="0,0,5,0" IsChecked="{Binding IsAutostart}"   Height="15" Width="15" Style="{StaticResource CircleCheckbox}"/>
-                    <TextBlock  VerticalAlignment="Center"  Text="Autostart"/>
+                    <TextBlock Foreground="{DynamicResource Text}"  VerticalAlignment="Center"  Text="Autostart"/>
                 </StackPanel>
                 <StackPanel Margin="0,5,5,0" Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
                     <CheckBox Margin="0,0,5,0"   Height="15" IsChecked="{Binding IsSecondHandler}" Width="15" Style="{StaticResource CircleCheckbox}"/>
-                    <TextBlock  VerticalAlignment="Center"  Text="Second handler"/>
+                    <TextBlock  Foreground="{DynamicResource Text}" VerticalAlignment="Center"  Text="Second handler"/>
                 </StackPanel>
                 <StackPanel Margin="0,5,5,0" Grid.Row="2" Orientation="Horizontal">
                     <CheckBox Margin="0,0,5,0"   Height="15" IsChecked="{Binding IsPriority}" Width="15" Style="{StaticResource CircleCheckbox}"/>
-                    <TextBlock  VerticalAlignment="Center"  Text="Priority"/>
+                    <TextBlock Foreground="{DynamicResource Text}"  VerticalAlignment="Center"  Text="Priority"/>
                 </StackPanel>
                 <StackPanel Margin="0,5,5,0" Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
                     <CheckBox Margin="0,0,5,0"   Height="15" Width="15" IsChecked="{Binding DeleteOnFailure}" Style="{StaticResource CircleCheckbox}"/>
-                    <TextBlock  VerticalAlignment="Center"  Text="Delete on failure"/>
+                    <TextBlock Foreground="{DynamicResource Text}"  VerticalAlignment="Center"  Text="Delete on failure"/>
                 </StackPanel>
-               
-                <TextBox HorizontalAlignment="Left" Margin="0,10,0,0" Text="{Binding Chunks}" Style="{StaticResource NoneTextBox}" Grid.Row="3" Tag="Chunks: " PreviewTextInput="NumberValidationTextBox" MaxWidth="100" MaxLength="4" />
-                <TextBox HorizontalAlignment="Left" Margin="0,10,0,0" Text="{Binding MaxBytes}" Style="{StaticResource NoneTextBox}" Grid.Row="3" Grid.Column="1" Tag="Maximal bytes per second: " PreviewTextInput="NumberValidationTextBox" MaxWidth="200" MaxLength="10" />
+
+                <TextBox HorizontalAlignment="Left"
+                         Foreground="{DynamicResource Text}"
+                         Margin="0,10,0,0" Text="{Binding Chunks}" Style="{StaticResource NoneTextBox}" Grid.Row="3" Tag="Chunks: " PreviewTextInput="NumberValidationTextBox" MaxWidth="100" MaxLength="4" />
+                <TextBox HorizontalAlignment="Left"
+                         Foreground="{DynamicResource Text}"
+                         Margin="0,10,0,0" Text="{Binding MaxBytes}" Style="{StaticResource NoneTextBox}" Grid.Row="3" Grid.Column="1" Tag="Maximal bytes per second: " PreviewTextInput="NumberValidationTextBox" MaxWidth="200" MaxLength="10" />
                 <StackPanel Margin="0,5,5,0" Grid.Row="4" Grid.Column="0" Orientation="Horizontal">
                     <CheckBox Margin="0,0,5,0" IsChecked="{Binding MergeWhileDownload}"   Height="15" Width="15" Style="{StaticResource CircleCheckbox}"/>
-                    <TextBlock  VerticalAlignment="Center"  Text="Merge Chunks while download"/>
+                    <TextBlock  Foreground="{DynamicResource Text}" VerticalAlignment="Center"  Text="Merge Chunks while download"/>
                 </StackPanel>
                 <TextBox HorizontalAlignment="Left" Margin="0,10,0,0" Style="{StaticResource NoneTextBox}" Grid.Row="5" Tag="Number of attemps: " PreviewTextInput="NumberValidationTextBox" Text="{Binding Attempts}" Width="160" MaxLength="2" />
             </Grid>
             <StackPanel Margin="10,5,10,3"  Grid.Row="2" Orientation="Horizontal">
 
-                <Button Width="80" Height="30"  Command="{Binding CloseCommand}"  BorderBrush="Transparent" Tag="#FFFC5E76" Background="LightPink" Style="{StaticResource ModernButtonStyle}">
+                <Button Width="80"
+                        Height="30"
+                        Command="{Binding CloseCommand}"
+                        BorderBrush="Transparent"
+                        Tag="{DynamicResource CancelBP}" Foreground="{DynamicResource Text}"
+                        Background="{DynamicResource CancelB}" Style="{StaticResource ModernButtonStyle}">
                     Cancel
                 </Button>
                 <TextBox  x:Name="textBox" Text="{Binding URL}" Width="300" Margin="10,5,10,3" VerticalContentAlignment="Center" FontSize="14"/>
-                <Button   Width="80" Height="30" IsEnabled="true"  Command="{Binding DownloadCommand}" BorderBrush="Transparent" Tag="SkyBlue" Background="LightBlue" Style="{StaticResource ModernButtonStyle}">
+                <Button   Width="80"
+                          Foreground="{DynamicResource Text}"
+                          Height="30"
+                          IsEnabled="true"
+                          Command="{Binding DownloadCommand}"
+                          BorderBrush="Transparent"
+                          Tag="{DynamicResource DownloadBP}"
+                          Background="{DynamicResource DownloadB}" Style="{StaticResource ModernButtonStyle}">
                     Download
                 </Button>
             </StackPanel>

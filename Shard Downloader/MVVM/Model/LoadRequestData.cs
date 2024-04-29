@@ -63,16 +63,18 @@ namespace Shard_Downloader.MVVM.Model
         private static void CommandLine(string workingDirectory, string Command)
         {
             ProcessStartInfo ProcessInfo;
-            Process Process;
+            Process? Process;
 
-            ProcessInfo = new ProcessStartInfo("cmd.exe", "/K " + Command + " && exit");
-            ProcessInfo.WorkingDirectory = workingDirectory;
-            ProcessInfo.CreateNoWindow = true;
-            ProcessInfo.UseShellExecute = true;
-            ProcessInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            ProcessInfo = new ProcessStartInfo("cmd.exe", "/K " + Command + " && exit")
+            {
+                WorkingDirectory = workingDirectory,
+                CreateNoWindow = true,
+                UseShellExecute = true,
+                WindowStyle = ProcessWindowStyle.Hidden
+            };
 
             Process = Process.Start(ProcessInfo);
-            Process.WaitForExit();
+            Process?.WaitForExit();
         }
 
         public void CreateRequest()
@@ -91,7 +93,7 @@ namespace Shard_Downloader.MVVM.Model
                 NumberOfAttempts = Attempts,
                 RequestCompleated = (_, _) => OnPropertyChanged(nameof(State)),
                 RequestStarted = (_) => { OnPropertyChanged(nameof(State)); },
-                RequestFailed = (IRequest s, HttpResponseMessage message) => { Debug.WriteLine("Failed"); Debug.WriteLine(message.StatusCode); OnPropertyChanged(nameof(State)); },
+                RequestFailed = (IRequest s, HttpResponseMessage? message) => { Debug.WriteLine("Failed"); Debug.WriteLine(message?.StatusCode); OnPropertyChanged(nameof(State)); },
                 RequestCancelled = (_) => OnPropertyChanged(nameof(State)),
                 InfosFetched = (_) => OnPropertyChanged(nameof(InfoField)),
             };
