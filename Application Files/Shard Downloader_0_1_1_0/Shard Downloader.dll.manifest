@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Shard Downloader.exe" version="0.1.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Shard Downloader.exe" version="0.1.1.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Assets\Images\logo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -90,13 +90,13 @@
       <dsig:DigestValue>Yn5/40HoDDx8cDcZPTe+VCsHqCSoAiWDTfnsoHU2UIM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Shard Downloader.dll" size="528384">
+  <file name="Shard Downloader.dll" size="553472">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>gcYyRQ3E71Hg2BhVJuCty4+0Vy7FUikcikSV4C8Y310=</dsig:DigestValue>
+      <dsig:DigestValue>5mJc3YwFimnCm9QFFZhcINN5HR14bomIbYtDsXILfDA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Shard Downloader.exe" size="217088">
@@ -105,7 +105,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>7GlvtZz53+SHw7VKzaszW4gHoYQWxb7iuNtlqizD3UE=</dsig:DigestValue>
+      <dsig:DigestValue>QP0oIbFY0WtaKc4sudRmltVsrJSBbD24/kIice5NdQY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Shard Downloader.runtimeconfig.json" size="372">
