@@ -30,7 +30,7 @@ namespace Shard_Downloader.MVVM.View
                 Owner = this
             };
             if (s.ShowDialog() == true)
-                ((MainViewModel)DataContext).SetParallelism(((SettingsViewModel)s.DataContext).Value);
+                MainViewModel.SetParallelism(((SettingsViewModel)s.DataContext).Value);
         }
 
         private void OpenAddWindow(object? sender, System.EventArgs e)

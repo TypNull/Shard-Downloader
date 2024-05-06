@@ -1,5 +1,5 @@
 ﻿using DownloadAssistant.Options;
-using DownloadAssistant.Request;
+using DownloadAssistant.Requests;
 using Requests;
 using Requests.Options;
 using Shard_Downloader.Core;
@@ -93,7 +93,7 @@ namespace Shard_Downloader.MVVM.Model
                 NumberOfAttempts = Attempts,
                 RequestCompleated = (_, _) => OnPropertyChanged(nameof(State)),
                 RequestStarted = (_) => { OnPropertyChanged(nameof(State)); },
-                RequestFailed = (IRequest s, HttpResponseMessage? message) => { Debug.WriteLine("Failed"); Debug.WriteLine(message?.StatusCode); OnPropertyChanged(nameof(State)); },
+                RequestFailed = (IRequest? s, HttpResponseMessage? message) => { Debug.WriteLine("Failed"); Debug.WriteLine(message?.StatusCode); OnPropertyChanged(nameof(State)); },
                 RequestCancelled = (_) => OnPropertyChanged(nameof(State)),
                 InfosFetched = (_) => OnPropertyChanged(nameof(InfoField)),
             };

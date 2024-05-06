@@ -62,7 +62,7 @@ namespace Shard_Downloader.MVVM.ViewModel
 
         internal void AddRequest(LoadRequestData data) => Requests.Add(data);
 
-        internal void SetParallelism(string value)
+        internal static void SetParallelism(string value)
         {
             if (string.IsNullOrEmpty(value))
                 foreach (RequestHandler handler in RequestHandler.MainRequestHandlers)
