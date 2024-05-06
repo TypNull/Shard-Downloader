@@ -8,28 +8,28 @@
     ".NETCoreApp,Version=v6.0": {
       "Shard Downloader/1.0.0": {
         "dependencies": {
-          "Shard.DownloadAssistant": "0.1.3"
+          "Shard.DownloadAssistant": "1.0.0"
         },
         "runtime": {
           "Shard Downloader.dll": {}
         }
       },
-      "Shard.DownloadAssistant/0.1.3": {
+      "Shard.DownloadAssistant/1.0.0": {
         "dependencies": {
-          "Shard.Requests": "2.0.3"
+          "Shard.Requests": "2.1.4"
         },
         "runtime": {
           "lib/net6.0/DownloadAssistant.dll": {
-            "assemblyVersion": "0.1.3.0",
-            "fileVersion": "0.1.3.0"
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
-      "Shard.Requests/2.0.3": {
+      "Shard.Requests/2.1.4": {
         "runtime": {
           "lib/net6.0/Requests.dll": {
-            "assemblyVersion": "2.0.3.0",
-            "fileVersion": "2.0.3.0"
+            "assemblyVersion": "2.1.4.0",
+            "fileVersion": "2.1.4.0"
           }
         }
       }
@@ -41,19 +41,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Shard.DownloadAssistant/0.1.3": {
+    "Shard.DownloadAssistant/1.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6zf4SjPLpj2QOgNPwgzgQcOGY8srxNYmcYUvPsTzD3EoXOV5q2ZztdC83OQgM0tfWipyL48eDZHoxA+S8IbI4Q==",
-      "path": "shard.downloadassistant/0.1.3",
-      "hashPath": "shard.downloadassistant.0.1.3.nupkg.sha512"
+      "sha512": "sha512-nhz5g8kMKkH3QmboPasLbendeWrBSz3k3yYXXSc3nq3eBP97pXt0qKhjrucDYBlTbdUQl3Lm2s9qlojoh/mS3g==",
+      "path": "shard.downloadassistant/1.0.0",
+      "hashPath": "shard.downloadassistant.1.0.0.nupkg.sha512"
     },
-    "Shard.Requests/2.0.3": {
+    "Shard.Requests/2.1.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-om4xsAABKDMjaak3pFC5MxlMhHPXJr0A6deM1EMhVV5Zx7+XBS2dHNj743vsQcEVQIzR80onWL0E9s3dBChglw==",
-      "path": "shard.requests/2.0.3",
-      "hashPath": "shard.requests.2.0.3.nupkg.sha512"
+      "sha512": "sha512-jRehagFFR/Mk21MYQQx5C3ibGLUltzmrsFjan/gzHC6BlJQ1prst8AO/ZlOvLE5uNXjYJPCl58KzB/qKBdfePA==",
+      "path": "shard.requests/2.1.4",
+      "hashPath": "shard.requests.2.1.4.nupkg.sha512"
     }
   }
 }
