@@ -33,18 +33,10 @@
   <ItemGroup>
     <Content Include="Assets\Images\logo.ico" />
   </ItemGroup>
-
+	
   <ItemGroup>
-    <PackageReference Include="Shard.DownloadAssistant" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="DownloadAssistant">
-      <HintPath>..\..\Librarys\DownloadAssistant\DownloadAssistant\bin\Debug\net6.0\DownloadAssistant.dll</HintPath>
-    </Reference>
-    <Reference Include="Requests">
-      <HintPath>..\..\Librarys\Requests\Requests\bin\Debug\net6.0\Requests.dll</HintPath>
-    </Reference>
+    <PackageReference Include="Shard.DownloadAssistant" Version="1.0.1" />
+    <PackageReference Include="Shard.Requests" Version="2.1.4" />
   </ItemGroup>
 
   <ItemGroup>
