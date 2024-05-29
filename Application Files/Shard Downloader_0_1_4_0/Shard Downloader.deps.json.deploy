@@ -8,20 +8,21 @@
     ".NETCoreApp,Version=v6.0": {
       "Shard Downloader/1.0.0": {
         "dependencies": {
-          "Shard.DownloadAssistant": "1.0.0"
+          "Shard.DownloadAssistant": "1.0.1",
+          "Shard.Requests": "2.1.4"
         },
         "runtime": {
           "Shard Downloader.dll": {}
         }
       },
-      "Shard.DownloadAssistant/1.0.0": {
+      "Shard.DownloadAssistant/1.0.1": {
         "dependencies": {
           "Shard.Requests": "2.1.4"
         },
         "runtime": {
           "lib/net6.0/DownloadAssistant.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
           }
         }
       },
@@ -41,12 +42,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Shard.DownloadAssistant/1.0.0": {
+    "Shard.DownloadAssistant/1.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nhz5g8kMKkH3QmboPasLbendeWrBSz3k3yYXXSc3nq3eBP97pXt0qKhjrucDYBlTbdUQl3Lm2s9qlojoh/mS3g==",
-      "path": "shard.downloadassistant/1.0.0",
-      "hashPath": "shard.downloadassistant.1.0.0.nupkg.sha512"
+      "sha512": "sha512-rfLxwJzlFR5ifwAvcZoGd/BggxElZshF3KWg5v7NbMSu2/o/8FZYDeWFy3tTRpCmEqHIbkN/zmyD31ICgDRD5w==",
+      "path": "shard.downloadassistant/1.0.1",
+      "hashPath": "shard.downloadassistant.1.0.1.nupkg.sha512"
     },
     "Shard.Requests/2.1.4": {
       "type": "package",
