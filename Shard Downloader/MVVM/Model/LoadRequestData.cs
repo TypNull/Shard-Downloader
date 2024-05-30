@@ -6,7 +6,6 @@ using Shard_Downloader.Core;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace Shard_Downloader.MVVM.Model
 {
@@ -15,12 +14,14 @@ namespace Shard_Downloader.MVVM.Model
         public RelayCommand PauseCommand { get; }
         public RelayCommand CancelCommand { get; }
         public string URL { get; set; } = string.Empty;
-        public string InfoField => _request?.Filename ?? URL;
+        public string InfoField { get => _infoField; set => SetField(ref _infoField, value); }
+        private string _infoField;
 
         public bool IsPaused { get => _isPaused; set => SetField(ref _isPaused, value); }
         private bool _isPaused;
 
-        public RequestState State => _request?.State ?? RequestState.Waiting;
+        public RequestState State { get => _state; set => SetField(ref _state, value); }
+        private RequestState _state = RequestState.Idle;
 
         public float Progress { get => _progress; set => SetField(ref _progress, value); }
         private float _progress;
@@ -39,6 +40,7 @@ namespace Shard_Downloader.MVVM.Model
 
         public LoadRequestData()
         {
+            _infoField = URL;
             PauseCommand = new RelayCommand((o) =>
             {
                 if (State is RequestState.Compleated or RequestState.Failed)
@@ -57,7 +59,16 @@ namespace Shard_Downloader.MVVM.Model
                 else
                     _request?.Start();
             });
-            CancelCommand = new RelayCommand((o) => Task.Run(() => _request?.Cancel()));
+            CancelCommand = new RelayCommand((o) =>
+            {
+                if (State is RequestState.Cancelled or RequestState.Failed)
+                {
+                    IsAutostart = true;
+                    CreateRequest();
+                }
+                else
+                    _request?.Cancel();
+            });
         }
 
         private static void CommandLine(string workingDirectory, string Command)
@@ -95,11 +106,11 @@ namespace Shard_Downloader.MVVM.Model
                 RequestStarted = (_) => { OnPropertyChanged(nameof(State)); },
                 RequestFailed = (IRequest? s, HttpResponseMessage? message) => { Debug.WriteLine("Failed"); Debug.WriteLine(message?.StatusCode); OnPropertyChanged(nameof(State)); },
                 RequestCancelled = (_) => OnPropertyChanged(nameof(State)),
-                InfosFetched = (_) => OnPropertyChanged(nameof(InfoField)),
+                InfosFetched = (req) => InfoField = req?.Filename ?? URL,
             };
 
             _request = new(URL, options);
-            _request.StateChanged += (_, _) => OnPropertyChanged(nameof(State));
+            _request.StateChanged += (_, state) => State = state;
             _request.Progress.ProgressChanged += Progress_ProgressChanged;
         }
 

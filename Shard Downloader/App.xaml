@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Shard_Downloader"
              xmlns:vm="clr-namespace:Shard_Downloader.MVVM.ViewModel"
-             xmlns:view="clr-namespace:Shard_Downloader.MVVM.View"
-             StartupUri="MVVM/View/MainWindow.xaml">
+             xmlns:view="clr-namespace:Shard_Downloader.MVVM.View">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

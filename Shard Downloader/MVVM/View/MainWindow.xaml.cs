@@ -1,4 +1,5 @@
-﻿using Shard_Downloader.MVVM.ViewModel;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Shard_Downloader.MVVM.ViewModel;
 using System;
 using System.Windows;
 using System.Windows.Interop;
@@ -10,16 +11,17 @@ namespace Shard_Downloader.MVVM.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
 
             IntPtr hWnd = new WindowInteropHelper(GetWindow(this)).EnsureHandle();
+            viewModel = App.Current.ServiceProvider.GetRequiredService<MainViewModel>();
+            viewModel.SetHandler(hWnd);
 
-            ((MainViewModel)DataContext).SetHandler(hWnd);
-
-            ((MainViewModel)DataContext).OpenAddWindowEvent += OpenAddWindow;
-            ((MainViewModel)DataContext).OpenSettingsWindowEvent += OpenSettingsWindow;
+            viewModel.OpenAddWindowEvent += OpenAddWindow;
+            viewModel.OpenSettingsWindowEvent += OpenSettingsWindow;
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
 
@@ -40,7 +42,7 @@ namespace Shard_Downloader.MVVM.View
                 Owner = this
             };
             if (w.ShowDialog() == true)
-                ((MainViewModel)DataContext).AddRequest(((AddViewModel)w.DataContext).RequestData);
+                viewModel.AddRequest(((AddViewModel)w.DataContext).RequestData);
 
         }
     }

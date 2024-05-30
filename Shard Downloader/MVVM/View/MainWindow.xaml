@@ -4,13 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shard_Downloader"
-        xmlns:viewmodel="clr-namespace:Shard_Downloader.MVVM.ViewModel" 
+        xmlns:viewmodel="clr-namespace:Shard_Downloader.MVVM.ViewModel"
         Icon="\Assets\Images\logo.png"
         mc:Ignorable="d"
-        Title="Shard Downloader" Background="{DynamicResource Background}" MinHeight="300" Height="450" Width="800" MinWidth="300" MaxWidth="800">
-    <Window.DataContext>
-        <viewmodel:MainViewModel/>
-    </Window.DataContext>
+        Title="Shard Downloader"
+        Background="{DynamicResource Background}"
+        MinHeight="300"
+        Height="450"
+        Width="800"
+        MinWidth="300"
+        MaxWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -190,25 +193,46 @@
                                         </Style>
                                     </Button.Style>
                                 </Button>
-                                <Button Grid.Column="4" HorizontalAlignment="Right" Width="20" Height="20" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Command="{Binding CancelCommand}" Background="{DynamicResource CancelB}" Tag="{DynamicResource CancelBP}" >
-                                    <TextBlock Margin="0,0,1,1" Foreground="{DynamicResource Text}" >🗙</TextBlock>
+                                <Button Grid.Column="4" HorizontalAlignment="Right" Width="20" Height="20"  HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Command="{Binding CancelCommand}" Background="{DynamicResource CancelB}" Tag="{DynamicResource CancelBP}" >
+                                    <TextBlock  Foreground="{DynamicResource Text}" >
+                                        <TextBlock.Style>
+                                            <Style  TargetType="TextBlock">
+                                                <Setter Property="Text"
+                                                        Value="🗙" />
+                                                <Setter Property="FontSize"
+                                                        Value="10" />
+                                                <Setter Property="Margin"
+                                                        Value="0,0,1,1" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding State}"
+                                                                 Value="Failed">
+                                                        <Setter Property="Text"
+                                                                Value="⟲" />
+                                                        <Setter Property="FontSize"
+                                                                Value="15" />
+                                                        <Setter Property="Margin"
+                                                                Value="0,-2,0,1" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding State}"
+                                                                 Value="Cancelled">
+                                                        <Setter Property="Text"
+                                                                Value="⟲" />
+                                                        <Setter Property="FontSize"
+                                                                Value="15" />
+                                                        <Setter Property="Margin"
+                                                                Value="0,-2,0,1" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
                                     <Button.Style>
                                         <Style  TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}">
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding State}"
-                                     Value="Cancelled">
+                                                             Value="Compleated">
                                                     <Setter Property="IsEnabled"
-                                    Value="False" />
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding State}"
-                                     Value="Compleated">
-                                                    <Setter Property="IsEnabled"
-                                    Value="False" />
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding State}"
-                                     Value="Failed">
-                                                    <Setter Property="IsEnabled"
-                                    Value="False" />
+                                                            Value="False" />
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>

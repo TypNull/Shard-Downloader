@@ -6,8 +6,10 @@ using Shard_Downloader.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text.Json;
 
 namespace Shard_Downloader.MVVM.ViewModel
 {
@@ -37,6 +39,8 @@ namespace Shard_Downloader.MVVM.ViewModel
             CancelCommand = new RelayCommand((o) => Cancel());
             ClearCommand = new RelayCommand((o) => Clear());
             ThemeCommand = new RelayCommand((o) => { _ = DwmSetWindowAttribute(_handler, 20, new[] { 0 }, 4); });
+
+            LoadRequests();
         }
 
         private void Cancel()
@@ -82,6 +86,28 @@ namespace Shard_Downloader.MVVM.ViewModel
                 App.Current.Resources.MergedDictionaries[0].Source = new Uri("/Themes/DarkTheme.xaml", UriKind.RelativeOrAbsolute);
                 _ = DwmSetWindowAttribute(hWnd, 20, new[] { 1 }, 4);
             }
+        }
+
+        internal void SaveRequests()
+        {
+            Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Shard Downloader"));
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Shard Downloader", "requests.json");
+            File.WriteAllText(path, JsonSerializer.Serialize(Requests.ToArray(), new JsonSerializerOptions() { WriteIndented = true }));
+
+        }
+
+        public void LoadRequests()
+        {
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Shard Downloader", "requests.json");
+            if (File.Exists(path))
+                foreach (LoadRequestData req in JsonSerializer.Deserialize<LoadRequestData[]>(File.ReadAllText(path), new JsonSerializerOptions() { WriteIndented = true }) ?? Array.Empty<LoadRequestData>())
+                {
+                    req.IsAutostart = false;
+                    if (req.State is RequestState.Running)
+                        req.State = RequestState.Paused;
+                    req.CreateRequest();
+                    Requests.Add(req);
+                }
         }
     }
 }
