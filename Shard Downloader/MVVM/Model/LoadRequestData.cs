@@ -13,6 +13,7 @@ namespace Shard_Downloader.MVVM.Model
     {
         public RelayCommand PauseCommand { get; }
         public RelayCommand CancelCommand { get; }
+        public RelayCommand RetryCommand { get; }
         public string URL { get; set; } = string.Empty;
         public string InfoField { get => _infoField; set => SetField(ref _infoField, value); }
         private string _infoField;
@@ -61,13 +62,15 @@ namespace Shard_Downloader.MVVM.Model
             });
             CancelCommand = new RelayCommand((o) =>
             {
+                _request?.Cancel();
+            });
+            RetryCommand = new RelayCommand((o) =>
+            {
                 if (State is RequestState.Cancelled or RequestState.Failed)
                 {
                     IsAutostart = true;
                     CreateRequest();
                 }
-                else
-                    _request?.Cancel();
             });
         }
 

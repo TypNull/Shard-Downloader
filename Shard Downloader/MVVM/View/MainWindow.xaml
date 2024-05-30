@@ -193,7 +193,7 @@
                                         </Style>
                                     </Button.Style>
                                 </Button>
-                                <Button Grid.Column="4" HorizontalAlignment="Right" Width="20" Height="20"  HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Command="{Binding CancelCommand}" Background="{DynamicResource CancelB}" Tag="{DynamicResource CancelBP}" >
+                                <Button Grid.Column="4" HorizontalAlignment="Right" Width="20" Height="20"  HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="{DynamicResource CancelB}" Tag="{DynamicResource CancelBP}" >
                                     <TextBlock  Foreground="{DynamicResource Text}" >
                                         <TextBlock.Style>
                                             <Style  TargetType="TextBlock">
@@ -228,11 +228,24 @@
                                     </TextBlock>
                                     <Button.Style>
                                         <Style  TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}">
+                                            <Setter Property="Command"
+                                                    Value="{Binding CancelCommand}" />
                                             <Style.Triggers>
+                                                
                                                 <DataTrigger Binding="{Binding State}"
                                                              Value="Compleated">
                                                     <Setter Property="IsEnabled"
                                                             Value="False" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding State}"
+                                                             Value="Failed">
+                                                    <Setter Property="Command"
+                                                            Value="{Binding RetryCommand}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding State}"
+                                                             Value="Cancelled">
+                                                    <Setter Property="Command"
+                                                            Value="{Binding RetryCommand}" />
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
