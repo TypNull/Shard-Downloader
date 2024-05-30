@@ -12,7 +12,7 @@
           "Microsoft.Extensions.Hosting": "8.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "8.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.1",
-          "Shard.DownloadAssistant": "1.0.1",
+          "Shard.DownloadAssistant": "1.0.2",
           "Shard.Requests": "2.1.4"
         },
         "runtime": {
@@ -387,14 +387,14 @@
           }
         }
       },
-      "Shard.DownloadAssistant/1.0.1": {
+      "Shard.DownloadAssistant/1.0.2": {
         "dependencies": {
           "Shard.Requests": "2.1.4"
         },
         "runtime": {
           "lib/net6.0/DownloadAssistant.dll": {
-            "assemblyVersion": "1.0.1.0",
-            "fileVersion": "1.0.1.0"
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
           }
         }
       },
@@ -668,12 +668,12 @@
       "path": "microsoft.extensions.primitives/8.0.0",
       "hashPath": "microsoft.extensions.primitives.8.0.0.nupkg.sha512"
     },
-    "Shard.DownloadAssistant/1.0.1": {
+    "Shard.DownloadAssistant/1.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rfLxwJzlFR5ifwAvcZoGd/BggxElZshF3KWg5v7NbMSu2/o/8FZYDeWFy3tTRpCmEqHIbkN/zmyD31ICgDRD5w==",
-      "path": "shard.downloadassistant/1.0.1",
-      "hashPath": "shard.downloadassistant.1.0.1.nupkg.sha512"
+      "sha512": "sha512-PhbIxZS8qu1jJ3Xh0bOvaFJ1jgZntDFzvB75BN6QhhW50Mp90rBmTUOa0tk7OTzOO6wMNEdTAEwAFSYVk2Kvbw==",
+      "path": "shard.downloadassistant/1.0.2",
+      "hashPath": "shard.downloadassistant.1.0.2.nupkg.sha512"
     },
     "Shard.Requests/2.1.4": {
       "type": "package",

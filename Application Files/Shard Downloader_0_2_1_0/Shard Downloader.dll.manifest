@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Shard Downloader.exe" version="0.2.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Shard Downloader.exe" version="0.2.1.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Assets\Images\logo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -63,13 +63,13 @@
       <dsig:DigestValue>nc6tEm3HSZJW7d6EWoEp1QmV6ZxhCYtQNtOK6c+1ySM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DownloadAssistant.dll" size="124928">
+  <file name="DownloadAssistant.dll" size="125440">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>5JoIcsTNIkqLBMpmox499Ug8LP4mSzjcvawfLecfNgM=</dsig:DigestValue>
+      <dsig:DigestValue>+e/eYH70bIcumvXvH9oAaoEwg6Aug5mECo0DZwQqe3w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Microsoft.Extensions.Configuration.Abstractions.dll" size="29448">
@@ -357,16 +357,16 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>YeX7wtr38zq0vYggtu7HrCLtnmqMcfNSiPElPBPD4mg=</dsig:DigestValue>
+      <dsig:DigestValue>BLf7r6M5lVaiFlrrat7Sin91B6ITH/nrf4FWttS1O9g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Shard Downloader.dll" size="559104">
+  <file name="Shard Downloader.dll" size="559616">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>f8CLu241FQoQSs/Bo4xzLLysmq6X1daw/juJVuVSXw0=</dsig:DigestValue>
+      <dsig:DigestValue>NiqucW2CrXZAk2WRT2kHIB34pjRsFOC9qWEWH9ZKuvw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Shard Downloader.exe" size="217088">
@@ -375,7 +375,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>pFi/Msu/ISCDhrHDNkGcC6Tn5u8whfhePvMRCp3/vPY=</dsig:DigestValue>
+      <dsig:DigestValue>qn0ciepwjEbAV+DKpqsOWGscWCCXgkounbh/0d67ArE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Shard Downloader.runtimeconfig.json" size="372">
